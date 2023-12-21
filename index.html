@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Sumar y Restar</title>
+</head>
+<body>
+  <h1>Suma y Resta</h1>
+
+  <p>Número actual: <span id="numero">0</span></p>
+
+  <button id="botonSumar">Sumar</button>
+  <button id="botonRestar">Restar</button>
+
+  <script>
+    let numeroActual = 0; // Inicializamos el número en 0
+
+    // Función para sumar al número y actualizar la visualización
+    function sumar() {
+      numeroActual++;
+      actualizarNumero();
+    }
+
+    // Función para restar al número y actualizar la visualización
+    function restar() {
+      numeroActual--;
+      actualizarNumero();
+    }
+
+    // Función para actualizar el número mostrado en el área de visualización
+    function actualizarNumero() {
+      const numeroSpan = document.getElementById("numero");
+      numeroSpan.textContent = numeroActual;
+    }
+
+    // Obtener referencias a los botones
+    const botonSumar = document.getElementById("botonSumar");
+    const botonRestar = document.getElementById("botonRestar");
+
+    // Agregar escuchadores de eventos a los botones
+    botonSumar.addEventListener("click", sumar);
+    botonRestar.addEventListener("click", restar);
+  </script>
+</body>
+</html>
